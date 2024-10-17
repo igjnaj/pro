@@ -1,5 +1,5 @@
 repeat
-    task.wait()
+	task.wait()
 until game:IsLoaded()
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
@@ -149,24 +149,24 @@ G2L["e"]["Size"] = UDim2.new(0.2535, 0, 0.15693, 0);
 G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["e"]["Text"] = [[Run time : 0:00:00]];
 local function startCountUpTimer()
-    local startTime = tick()
+	local startTime = tick()
 
-    local updateTimer = function()
-        local elapsedTime = tick() - startTime
-        local hours = math.floor(elapsedTime / 3600)
-        local minutes = math.floor((elapsedTime % 3600) / 60)
-        local seconds = math.floor(elapsedTime % 60)
+	local updateTimer = function()
+		local elapsedTime = tick() - startTime
+		local hours = math.floor(elapsedTime / 3600)
+		local minutes = math.floor((elapsedTime % 3600) / 60)
+		local seconds = math.floor(elapsedTime % 60)
 
-        G2L["e"]["Text"] = (string.format("Run time: %d%02d%02d", hours, minutes, seconds))
-    end
+		G2L["e"]["Text"] = (string.format("Run time: %d%02d%02d", hours, minutes, seconds))
+	end
 
-    local timerLoop = function()
-        while true do
-            updateTimer()
-            wait(1)
-        end
-    end
-    spawn(timerLoop)
+	local timerLoop = function()
+		while true do
+			updateTimer()
+			wait(1)
+		end
+	end
+	spawn(timerLoop)
 end
 startCountUpTimer()
 G2L["e"]["Name"] = [[Runtimer]];
@@ -367,7 +367,7 @@ G2L["23"]["AspectRatio"] = 0.99301;
 
 -- StarterGui.v1ijv.basdc12.serverhop_button.LocalScript
 local function C_a()
-local script = G2L["a"];
+	local script = G2L["a"];
 	local function notify(title, message, timeout)
 		game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value += 1
 		local notifi = Instance.new("Frame")
@@ -380,7 +380,7 @@ local script = G2L["a"];
 		local UICorner_3 = Instance.new("UICorner")
 		local bar_fg = Instance.new("Frame")
 		local UICorner_4 = Instance.new("UICorner")
-	
+
 		notifi.Name = "notifi_".. math.random(1, 999999)
 		notifi.Parent = game.Players.LocalPlayer.PlayerGui["v1ijv"]
 		notifi.BackgroundColor3 = Color3.fromRGB(253, 229, 221)
@@ -391,9 +391,9 @@ local script = G2L["a"];
 		print(notifistacks)
 		notifi.Position = UDim2.new(1, 0, 0.818181813, 0) --0.770558774, 0, 0.818181813, 0 Target
 		notifi.Size = UDim2.new(0.229441196, 0, 0.181818187, 0)
-	
+
 		UICorner.Parent = notifi
-	
+
 		Title.Name = "Title"
 		Title.Parent = notifi
 		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -411,9 +411,9 @@ local script = G2L["a"];
 		Title.SizeConstraint = Enum.SizeConstraint.RelativeXY
 		Title.TextDirection = Enum.TextDirection.LeftToRight
 		Title.TextTruncate = Enum.TextTruncate.AtEnd
-	
+
 		UICorner_2.Parent = Title
-	
+
 		Description.Name = "Description"
 		Description.Parent = notifi
 		Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -433,7 +433,7 @@ local script = G2L["a"];
 		Description.SizeConstraint = Enum.SizeConstraint.RelativeXY
 		Description.TextDirection = Enum.TextDirection.LeftToRight
 		Description.TextTruncate = Enum.TextTruncate.AtEnd
-	
+
 		UIAspectRatioConstraint.Parent = notifi
 		UIAspectRatioConstraint.AspectRatio = 2.895
 		local TS = game:GetService("TweenService")
@@ -459,21 +459,21 @@ local script = G2L["a"];
 	script.Parent.MouseButton1Click:Connect(function()
 		notify("Notice", "Teleporting.. please wait!", 3)
 		local G2L = {};
-	
+
 		G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 		G2L["1"]["IgnoreGuiInset"] = true;
 		G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.TopbarSafeInsets;
 		G2L["1"]["Name"] = [[customloadinglol]];
 		G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-	
+
 		G2L["2"] = Instance.new("Frame", G2L["1"]);
 		G2L["2"]["BorderSizePixel"] = 0;
 		G2L["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 		G2L["2"]["Size"] = UDim2.new(1, 0, 1, 0);
 		G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 		G2L["2"]["BackgroundTransparency"] = 0.65;
-	
-	
+
+
 		G2L["4"] = Instance.new("TextLabel", G2L["2"]);
 		G2L["4"]["TextWrapped"] = true;
 		G2L["4"]["BorderSizePixel"] = 0;
@@ -488,15 +488,15 @@ local script = G2L["a"];
 		G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 		G2L["4"]["Text"] = [[Revmp's Oneclick]];
 		G2L["4"]["Position"] = UDim2.new(0.23477, 0, 0.09881, 0);
-	
-	
+
+
 		G2L["5"] = Instance.new("UIGradient", G2L["4"]);
 		G2L["5"]["Rotation"] = 65;
 		G2L["5"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(171, 171, 255))};
-	
+
 		G2L["6"] = Instance.new("UITextSizeConstraint", G2L["4"]);
 		G2L["6"]["MaxTextSize"] = 68;
-	
+
 		G2L["7"] = Instance.new("TextLabel", G2L["2"]);
 		G2L["7"]["BorderSizePixel"] = 0;
 		G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -509,9 +509,9 @@ local script = G2L["a"];
 		G2L["7"]["Text"] = [[Server Hopping... :3]];
 		G2L["7"]["Name"] = [[coolloading]];
 		G2L["7"]["Position"] = UDim2.new(0.27891, 0, 0.35573, 0);
-	
+
 		G2L["8"] = Instance.new("LocalScript", G2L["2"]);
-	
+
 		G2L["9"] = Instance.new("TextLabel", G2L["2"]);
 		G2L["9"]["TextWrapped"] = true;
 		G2L["9"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
@@ -526,9 +526,9 @@ local script = G2L["a"];
 		G2L["9"]["Text"] = [[Ut cursus ante vitae odio elementum, vel mollis metus consectetur. Nulla lacinia elit ligula, consectetur hendrerit nunc tincidunt ac. Donec cursus euismod ullamcorper. Suspendisse in mauris ac felis blandit tristique. Fusce vitae cursus tellus, vel gravida lorem. Nulla tellus odio, porta in laoreet in, tempor et augue. Duis bibendum molestie magna in scelerisque. Integer in neque laoreet, gravida mauris in, vehicula ligula. Donec tincidunt, eros quis elementum accumsan, nunc diam facilisis risus, quis tincidunt mauris neque eu neque. Pellentesque nec purus sit amet orci fringilla faucibus. Donec blandit mi tempor dui hendrerit, sit amet mattis libero interdum. Sed sed turpis vitae purus scelerisque semper quis sit amet felis. Suspendisse potenti.]];
 		G2L["9"]["Name"] = [[randomquote]];
 		G2L["9"]["Position"] = UDim2.new(0.29656, 0, 0.79447, 0);
-	
+
 		G2L["a"] = Instance.new("LocalScript", G2L["2"]);
-	
+
 		local function C_8()
 			local script = G2L["8"];
 			print("Hello world!")
@@ -629,7 +629,7 @@ local script = G2L["a"];
 				end
 			end
 		end
-	
+
 		function Teleport()
 			while wait() do
 				pcall(function()
@@ -640,7 +640,7 @@ local script = G2L["a"];
 				end)
 			end
 		end
-	
+
 		-- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
 		Teleport()
 	end)
@@ -648,7 +648,7 @@ end;
 task.spawn(C_a);
 -- StarterGui.v1ijv.basdc12.Forcequit_button.LocalScript
 local function C_d()
-local script = G2L["d"];
+	local script = G2L["d"];
 	script.Parent.MouseButton1Click:Connect(function()
 		local plr = game:GetService("Players").LocalPlayer
 		plr:Kick("Revmp's Oneclick | Force QUIT! :)")
@@ -657,9 +657,9 @@ end;
 task.spawn(C_d);
 -- StarterGui.v1ijv.LocalScript
 local function C_1b()
-local script = G2L["1b"];
+	local script = G2L["1b"];
 	print("Klemplus's OCR+ (One click reborn plus) loaded!")
-	
+
 	local tweenservice = game:GetService("TweenService")
 	local frame = script.Parent.basdc12
 	local dice = math.random(1, 4)
@@ -686,14 +686,14 @@ local script = G2L["1b"];
 		print("[DEBUGGER]: ".. msg)
 	end
 	debugger("nice")
-	
+
 	debugger("Let do a SMALL executor test")
 	local result, success = pcall(function()
 		getgenv().test = false
 		writefile("test.json", "hello world")
 		readfile("test.json")
 		delfile("test.json")
-        setfpscap(60)
+		setfpscap(60)
 	end)
 	print(result)
 	print(success)
@@ -706,11 +706,11 @@ local script = G2L["1b"];
 		script.Parent:Destroy()	
 	end
 	-- MAIN! 2.05 is the contrainter ? idk
-	
+
 	local mobileSupport = script.Parent.mobileOnly
 	mobileSupport.Active = true
 	mobileSupport.Draggable = true
-	
+
 	local debouncekey = false
 	local IS = game:GetService("UserInputService")
 	IS.InputEnded:Connect(function(input)
@@ -761,12 +761,12 @@ local script = G2L["1b"];
 			end
 		end
 	end)
-	
+
 end;
 task.spawn(C_1b);
 -- StarterGui.v1ijv.mobileOnly.LocalScript
 local function C_22()
-local script = G2L["22"];
+	local script = G2L["22"];
 	local debouncekey = false
 	local tweenservice = game:GetService("TweenService")
 	script.Parent.MouseButton1Click:Connect(function()
@@ -817,125 +817,126 @@ local script = G2L["22"];
 	end)
 end;
 task.spawn(C_22);
+
 local function notify(title, message, timeout)
-    game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value += 1
-    local notifi = Instance.new("Frame")
-    local UICorner = Instance.new("UICorner")
-    local Title = Instance.new("TextLabel")
-    local UICorner_2 = Instance.new("UICorner")
-    local Description = Instance.new("TextLabel")
-    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-    local bar_bg = Instance.new("Frame")
-    local UICorner_3 = Instance.new("UICorner")
-    local bar_fg = Instance.new("Frame")
-    local UICorner_4 = Instance.new("UICorner")
+	game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value += 1
+	local notifi = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Title = Instance.new("TextLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local Description = Instance.new("TextLabel")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local bar_bg = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local bar_fg = Instance.new("Frame")
+	local UICorner_4 = Instance.new("UICorner")
 
-    notifi.Name = "notifi_".. math.random(1, 999999)
-    notifi.Parent = game.Players.LocalPlayer.PlayerGui["v1ijv"]
-    notifi.BackgroundColor3 = Color3.fromRGB(253, 229, 221)
-    notifi.BackgroundTransparency = 0.800
-    notifi.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    notifi.BorderSizePixel = 0
-    notifistacks = 0.818181813 - (game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value / 5)
-    print(notifistacks)
-    notifi.Position = UDim2.new(1, 0, 0.818181813, 0) --0.770558774, 0, 0.818181813, 0 Target
-    notifi.Size = UDim2.new(0.229441196, 0, 0.181818187, 0)
+	notifi.Name = "notifi_".. math.random(1, 999999)
+	notifi.Parent = game.Players.LocalPlayer.PlayerGui["v1ijv"]
+	notifi.BackgroundColor3 = Color3.fromRGB(253, 229, 221)
+	notifi.BackgroundTransparency = 0.800
+	notifi.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	notifi.BorderSizePixel = 0
+	notifistacks = 0.818181813 - (game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value / 5)
+	print(notifistacks)
+	notifi.Position = UDim2.new(1, 0, 0.818181813, 0) --0.770558774, 0, 0.818181813, 0 Target
+	notifi.Size = UDim2.new(0.229441196, 0, 0.181818187, 0)
 
-    UICorner.Parent = notifi
+	UICorner.Parent = notifi
 
-    Title.Name = "Title"
-    Title.Parent = notifi
-    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Title.BackgroundTransparency = 1.000
-    Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Title.BorderSizePixel = 0
-    Title.Position = UDim2.new(0.0267301966, 0, -0.00790571142, 0)
-    Title.Size = UDim2.new(0.973270476, 0, 0.316205412, 0)
-    Title.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-    Title.Text = title
-    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
-    Title.TextSize = 14.000
-    Title.TextXAlignment = Enum.TextXAlignment.Left
-    Title.RichText = true
-    Title.SizeConstraint = Enum.SizeConstraint.RelativeXY
-    Title.TextDirection = Enum.TextDirection.LeftToRight
-    Title.TextTruncate = Enum.TextTruncate.AtEnd
+	Title.Name = "Title"
+	Title.Parent = notifi
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0.0267301966, 0, -0.00790571142, 0)
+	Title.Size = UDim2.new(0.973270476, 0, 0.316205412, 0)
+	Title.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+	Title.Text = title
+	Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Title.TextSize = 14.000
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+	Title.RichText = true
+	Title.SizeConstraint = Enum.SizeConstraint.RelativeXY
+	Title.TextDirection = Enum.TextDirection.LeftToRight
+	Title.TextTruncate = Enum.TextTruncate.AtEnd
 
-    UICorner_2.Parent = Title
+	UICorner_2.Parent = Title
 
-    Description.Name = "Description"
-    Description.Parent = notifi
-    Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Description.BackgroundTransparency = 1.000
-    Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Description.BorderSizePixel = 0
-    Description.Position = UDim2.new(0.0262756087, 0, 0.260869563, 0)
-    Description.Size = UDim2.new(0.951197982, 0, 0.739128947, 0)
-    Description.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-    Description.Text = message
-    Description.TextColor3 = Color3.fromRGB(0, 0, 0)
-    Description.TextSize = 14.000
-    Description.TextWrapped = true
-    Description.TextXAlignment = Enum.TextXAlignment.Left
-    Description.TextYAlignment = Enum.TextYAlignment.Top
-    Description.RichText = true
-    Description.SizeConstraint = Enum.SizeConstraint.RelativeXY
-    Description.TextDirection = Enum.TextDirection.LeftToRight
-    Description.TextTruncate = Enum.TextTruncate.AtEnd
+	Description.Name = "Description"
+	Description.Parent = notifi
+	Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Description.BackgroundTransparency = 1.000
+	Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Description.BorderSizePixel = 0
+	Description.Position = UDim2.new(0.0262756087, 0, 0.260869563, 0)
+	Description.Size = UDim2.new(0.951197982, 0, 0.739128947, 0)
+	Description.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+	Description.Text = message
+	Description.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Description.TextSize = 14.000
+	Description.TextWrapped = true
+	Description.TextXAlignment = Enum.TextXAlignment.Left
+	Description.TextYAlignment = Enum.TextYAlignment.Top
+	Description.RichText = true
+	Description.SizeConstraint = Enum.SizeConstraint.RelativeXY
+	Description.TextDirection = Enum.TextDirection.LeftToRight
+	Description.TextTruncate = Enum.TextTruncate.AtEnd
 
-    UIAspectRatioConstraint.Parent = notifi
-    UIAspectRatioConstraint.AspectRatio = 2.895
-    local TS = game:GetService("TweenService")
-    TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(0.770558774, 0, notifistacks, 0)}):Play()
-    local sound = Instance.new("Sound", script.Parent)
-    sound.Name = "temp".. math.random(1, 1235123)
-    sound.Looped = false
-    sound.SoundId = "rbxassetid://120893938580291"
-    sound.Volume = .05
-    sound:Play()
-    task.wait(1)
-    sound:Destroy()
-    local timer = 0
-    while timer <= timeout do
-        task.wait(.2)
-        timer += .2
-    end
-    TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(1, 0, notifi.Position.Y.Scale, 0)}):Play() --0? idk why
-    task.wait(2)
-    game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value -= 1
-    notifi:Destroy()
+	UIAspectRatioConstraint.Parent = notifi
+	UIAspectRatioConstraint.AspectRatio = 2.895
+	local TS = game:GetService("TweenService")
+	TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(0.770558774, 0, notifistacks, 0)}):Play()
+	local sound = Instance.new("Sound", script.Parent)
+	sound.Name = "temp".. math.random(1, 1235123)
+	sound.Looped = false
+	sound.SoundId = "rbxassetid://120893938580291"
+	sound.Volume = .05
+	sound:Play()
+	task.wait(1)
+	sound:Destroy()
+	local timer = 0
+	while timer <= timeout do
+		task.wait(.2)
+		timer += .2
+	end
+	TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(1, 0, notifi.Position.Y.Scale, 0)}):Play() --0? idk why
+	task.wait(2)
+	game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value -= 1
+	notifi:Destroy()
 end
-return G2L["1"], require;
 
-task.spawn(notify("notify", "Still loading!", 5))
+notify("repoc", "Still loading!", 5)
+
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
-    v:Disable()
+	v:Disable()
 end
 
 game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
-    if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
-        game:GetService("TeleportService"):Teleport(game.PlaceId)
-    end
+	if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
+		game:GetService("TeleportService"):Teleport(game.PlaceId)
+	end
 end)
 
 setfpscap(capfps)
 if norender == true then
-    game:GetService("RunService").Set3dRenderingEnabled(false)
+	game:GetService("RunService").Set3dRenderingEnabled(false)
 end
 task.spawn(notify("notify", "Loaded!", 5))
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 local args = {
 	[1] = "Skins",
-    [2] = "Badge"
+	[2] = "Badge"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UI"):WaitForChild("Purchase"):InvokeServer(unpack(args))
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UI"):WaitForChild("Equip"):InvokeServer(unpack(args))
 local function farmpox()
-    while ( true )
-    do
-    	tp(math.random(-3000, 3000), 3000, math.random(-3000, 3000));
-    	wait(1)
-    end
-    spawn(farmpox)
+	while ( true )
+	do
+		tp(math.random(-3000, 3000), 3000, math.random(-3000, 3000));
+		wait(1)
+	end
+	spawn(farmpox)
 end
 farmpox()
