@@ -944,7 +944,7 @@ local args = {
 game:GetService("ReplicatedStorage").Events.Data.Equip:FireServer(unpack(args))
 local plr = game:service"Players".LocalPlayer;
 local tween_s = game:service"TweenService";
-local info = TweenInfo.new(1,Enum.EasingStyle.Quad);
+local info = TweenInfo.new(3,Enum.EasingStyle.Quad);
 
 function tp(...)
     local tic_k = tick();
@@ -956,8 +956,10 @@ function tp(...)
 end)
    if not tween then return err end
 end
-while ( true )
-do
-	tp(math.random(-3000, 3000), 3000, math.random(-3000, 3000));
-	wait(1)
-end
+task.spawn(function()
+    while ( true )
+    do 
+    	tp(math.random(-3000, 3000), 3000, math.random(-3000, 3000));
+    	wait(1)
+    end
+end)
