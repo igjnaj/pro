@@ -913,7 +913,10 @@ if game.PlaceId == 11353528705 then
 else
      game:GetService("TeleportService"):Teleport(11353528705)
 end
-game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+local args = {
+	[1] = true
+}
+game:GetService("ReplicatedStorage").Events.Player.ChangePlayerMode:FireServer(unpack(args))
 
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
 	v:Disable()
@@ -929,7 +932,7 @@ setfpscap(capfps)
 if norender == true then
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end
-task.spawn(notify("notify", "Loaded!", 5))
+notify("notify", "Loaded!", 1)
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 local args = {
 	[1] = "Skins",
