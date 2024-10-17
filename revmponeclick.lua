@@ -148,7 +148,7 @@ G2L["e"]["RichText"] = true;
 G2L["e"]["Size"] = UDim2.new(0.2535, 0, 0.15693, 0);
 G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["e"]["Text"] = [[Run time : 0:00:00]];
-local function startCountUpTimer(timerLabel)
+local function startCountUpTimer()
     local startTime = tick()
 
     local updateTimer = function()
