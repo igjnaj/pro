@@ -936,12 +936,12 @@ notify("notify", "Loaded!", 1)
 local args = {
 	[1] = "7"
 }
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Data"):WaitForChild("Purchase"):InvokeServer(unpack(args)
+game:GetService("ReplicatedStorage").Events.Data.Purchase:InvokeServer(unpack(args)
 local args = {
 	[1] = "7",
 	[2] = "Perk1"
 }
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Data"):WaitForChild("Equip"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Events.Data.Equip:FireServer(unpack(args))
 local function farmpox()
 	while ( true )
 	do
