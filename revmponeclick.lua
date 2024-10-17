@@ -157,7 +157,7 @@ local function startCountUpTimer()
 		local minutes = math.floor((elapsedTime % 3600) / 60)
 		local seconds = math.floor(elapsedTime % 60)
 
-		G2L["e"]["Text"] = (string.format("Run time: %d%02d%02d", hours, minutes, seconds))
+		G2L["e"]["Text"] = (string.format("Run time: %d:%02d:%02d", hours, minutes, seconds))
 	end
 
 	local timerLoop = function()
@@ -907,7 +907,13 @@ local function notify(title, message, timeout)
 	notifi:Destroy()
 end
 
-notify("repoc", "Still loading!", 5)
+notify("repoc", "Still loading!", 2)
+if game.PlaceId == 11353528705 then
+	notify("notify", "perfect!", 2)
+else
+     game:GetService("TeleportService"):Teleport(11353528705)
+end
+game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
 	v:Disable()
