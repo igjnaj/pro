@@ -921,7 +921,7 @@ end)
 
 setfpscap(capfps)
 if norender == true then
-	game:GetService("RunService").Set3dRenderingEnabled(false)
+	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end
 task.spawn(notify("notify", "Loaded!", 5))
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
