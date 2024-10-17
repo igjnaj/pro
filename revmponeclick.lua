@@ -948,6 +948,5 @@ local function farmpox()
 		tp(math.random(-3000, 3000), 3000, math.random(-3000, 3000));
 		wait(1)
 	end
-	spawn(farmpox)
 end
-farmpox()
+task.spawn(farmpox())
