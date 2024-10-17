@@ -956,11 +956,8 @@ function tp(...)
 end)
    if not tween then return err end
 end
-local function farmpox()
-	while ( true )
-	do
-		tp(math.random(-3000, 3000), 3000, math.random(-3000, 3000));
-		wait(1)
-	end
+while ( true )
+do
+	tp(math.random(-3000, 3000), 3000, math.random(-3000, 3000));
+	wait(1)
 end
-task.spawn(farmpox())
