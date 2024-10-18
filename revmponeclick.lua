@@ -932,7 +932,6 @@ setfpscap(capfps)
 if norender == true then
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end
-notify("notify", "Loaded!", 1)
 local args = {
 	[1] = "7"
 }
@@ -942,6 +941,16 @@ local args = {
 	[2] = "Perk1"
 }
 game:GetService("ReplicatedStorage").Events.Data.Equip:FireServer(unpack(args))
+task.spawn(function()
+    while true do
+        local args = {
+            [1] = 2
+        }
+        game:GetService("ReplicatedStorage").Events.Player.Vote:FireServer(unpack(args))
+        task.wait(5)
+    end
+end)
+
 local plr = game:service"Players".LocalPlayer;
 local tween_s = game:service"TweenService";
 local info = TweenInfo.new(15,Enum.EasingStyle.Quad);
