@@ -944,7 +944,7 @@ local args = {
 game:GetService("ReplicatedStorage").Events.Data.Equip:FireServer(unpack(args))
 local plr = game:service"Players".LocalPlayer;
 local tween_s = game:service"TweenService";
-local info = TweenInfo.new(3,Enum.EasingStyle.Quad);
+local info = TweenInfo.new(15,Enum.EasingStyle.Quad);
 
 function tp(...)
     local tic_k = tick();
@@ -956,7 +956,7 @@ function tp(...)
 end)
    if not tween then return err end
 end
-debugger("get rid of 'streamingenabled' due to VERY LAG. and ram usage, a lot.'")
+print("Got rid of streamingEnabled")
 game.Workspace.StreamingEnabled = false
 
 task.spawn(function()
