@@ -956,6 +956,9 @@ function tp(...)
 end)
    if not tween then return err end
 end
+debugger("get rid of 'streamingenabled' due to VERY LAG. and ram usage, a lot.'")
+game.Workspace.StreamingEnabled = false
+
 task.spawn(function()
     while ( true )
     do 
@@ -963,3 +966,5 @@ task.spawn(function()
     	wait(1)
     end
 end)
+
+print("Complete, nothing else to do.")
