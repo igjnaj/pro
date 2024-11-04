@@ -885,6 +885,7 @@ task.spawn(function()
 			print("i like my cheese drippy bru")
 			Teleport()
         end
+	task.wait(1)
     end
 end)
 
