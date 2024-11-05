@@ -9,98 +9,6 @@ until game:IsLoaded()
 88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
-
-
-function notify(title, message, timeout)
-	task.spawn(function()
-		game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value += 1
-		local notifi = Instance.new("Frame")
-		local UICorner = Instance.new("UICorner")
-		local Title = Instance.new("TextLabel")
-		local UICorner_2 = Instance.new("UICorner")
-		local Description = Instance.new("TextLabel")
-		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-		local bar_bg = Instance.new("Frame")
-		local UICorner_3 = Instance.new("UICorner")
-		local bar_fg = Instance.new("Frame")
-		local UICorner_4 = Instance.new("UICorner")
-
-		notifi.Name = "notifi_".. math.random(1, 999999)
-		notifi.Parent = game.Players.LocalPlayer.PlayerGui["v1ijv"]
-		notifi.BackgroundColor3 = Color3.fromRGB(253, 229, 221)
-		notifi.BackgroundTransparency = 0.800
-		notifi.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		notifi.BorderSizePixel = 0
-		notifistacks = 0.818181813 - (game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value / 5)
-		print(notifistacks)
-		notifi.Position = UDim2.new(1, 0, 0.818181813, 0) --0.770558774, 0, 0.818181813, 0 Target
-		notifi.Size = UDim2.new(0.229441196, 0, 0.181818187, 0)
-
-		UICorner.Parent = notifi
-
-		Title.Name = "Title"
-		Title.Parent = notifi
-		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Title.BackgroundTransparency = 1.000
-		Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Title.BorderSizePixel = 0
-		Title.Position = UDim2.new(0.0267301966, 0, -0.00790571142, 0)
-		Title.Size = UDim2.new(0.973270476, 0, 0.316205412, 0)
-		Title.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-		Title.Text = title
-		Title.TextColor3 = Color3.fromRGB(0, 0, 0)
-		Title.TextSize = 14.000
-		Title.TextXAlignment = Enum.TextXAlignment.Left
-		Title.RichText = true
-		Title.SizeConstraint = Enum.SizeConstraint.RelativeXY
-		Title.TextDirection = Enum.TextDirection.LeftToRight
-		Title.TextTruncate = Enum.TextTruncate.AtEnd
-
-		UICorner_2.Parent = Title
-
-		Description.Name = "Description"
-		Description.Parent = notifi
-		Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Description.BackgroundTransparency = 1.000
-		Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Description.BorderSizePixel = 0
-		Description.Position = UDim2.new(0.0262756087, 0, 0.260869563, 0)
-		Description.Size = UDim2.new(0.951197982, 0, 0.739128947, 0)
-		Description.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-		Description.Text = message
-		Description.TextColor3 = Color3.fromRGB(0, 0, 0)
-		Description.TextSize = 14.000
-		Description.TextWrapped = true
-		Description.TextXAlignment = Enum.TextXAlignment.Left
-		Description.TextYAlignment = Enum.TextYAlignment.Top
-		Description.RichText = true
-		Description.SizeConstraint = Enum.SizeConstraint.RelativeXY
-		Description.TextDirection = Enum.TextDirection.LeftToRight
-		Description.TextTruncate = Enum.TextTruncate.AtEnd
-
-		UIAspectRatioConstraint.Parent = notifi
-		UIAspectRatioConstraint.AspectRatio = 2.895
-		local TS = game:GetService("TweenService")
-		TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(0.770558774, 0, notifistacks, 0)}):Play()
-		local sound = Instance.new("Sound", script.Parent)
-		sound.Name = "temp".. math.random(1, 1235123)
-		sound.Looped = false
-		sound.SoundId = "rbxassetid://120893938580291"
-		sound.Volume = .05
-		sound:Play()
-		task.wait(1)
-		sound:Destroy()
-		local timer = 0
-		while timer <= timeout do
-			task.wait(.2)
-			timer += .2
-		end
-		TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(1, 0, notifi.Position.Y.Scale, 0)}):Play() --0? idk why
-		task.wait(2)
-		game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value -= 1
-		notifi:Destroy()
-	end)
-end
 -- https://scriptblox.com/script/Universal-Script-Universal-Serverhop-No-Double-Servers-3788. im too lazy to make it myself and im not that smart so. code stolen!
 local PlaceID = game.PlaceId
 local AllIDs = {}
@@ -492,6 +400,100 @@ G2L["1d"]["Name"] = [[temp]];
 G2L["1e"] = Instance.new("IntValue", G2L["1"]);
 G2L["1e"]["Name"] = [[NotifyCount]];
 G2L["1e"]["Value"] = -1;
+--notify function
+function notify(title, message, timeout)
+	task.spawn(function()
+		game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value += 1
+		local notifi = Instance.new("Frame")
+		local UICorner = Instance.new("UICorner")
+		local Title = Instance.new("TextLabel")
+		local UICorner_2 = Instance.new("UICorner")
+		local Description = Instance.new("TextLabel")
+		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+		local bar_bg = Instance.new("Frame")
+		local UICorner_3 = Instance.new("UICorner")
+		local bar_fg = Instance.new("Frame")
+		local UICorner_4 = Instance.new("UICorner")
+
+		notifi.Name = "notifi_".. math.random(1, 999999)
+		notifi.Parent = game.Players.LocalPlayer.PlayerGui["v1ijv"]
+		notifi.BackgroundColor3 = Color3.fromRGB(253, 229, 221)
+		notifi.BackgroundTransparency = 0.800
+		notifi.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		notifi.BorderSizePixel = 0
+		notifistacks = 0.818181813 - (game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value / 5)
+		print(notifistacks)
+		notifi.Position = UDim2.new(1, 0, 0.818181813, 0) --0.770558774, 0, 0.818181813, 0 Target
+		notifi.Size = UDim2.new(0.229441196, 0, 0.181818187, 0)
+
+		UICorner.Parent = notifi
+
+		Title.Name = "Title"
+		Title.Parent = notifi
+		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Title.BackgroundTransparency = 1.000
+		Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Title.BorderSizePixel = 0
+		Title.Position = UDim2.new(0.0267301966, 0, -0.00790571142, 0)
+		Title.Size = UDim2.new(0.973270476, 0, 0.316205412, 0)
+		Title.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+		Title.Text = title
+		Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Title.TextSize = 14.000
+		Title.TextXAlignment = Enum.TextXAlignment.Left
+		Title.RichText = true
+		Title.SizeConstraint = Enum.SizeConstraint.RelativeXY
+		Title.TextDirection = Enum.TextDirection.LeftToRight
+		Title.TextTruncate = Enum.TextTruncate.AtEnd
+
+		UICorner_2.Parent = Title
+
+		Description.Name = "Description"
+		Description.Parent = notifi
+		Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Description.BackgroundTransparency = 1.000
+		Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Description.BorderSizePixel = 0
+		Description.Position = UDim2.new(0.0262756087, 0, 0.260869563, 0)
+		Description.Size = UDim2.new(0.951197982, 0, 0.739128947, 0)
+		Description.FontFace = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+		Description.Text = message
+		Description.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Description.TextSize = 14.000
+		Description.TextWrapped = true
+		Description.TextXAlignment = Enum.TextXAlignment.Left
+		Description.TextYAlignment = Enum.TextYAlignment.Top
+		Description.RichText = true
+		Description.SizeConstraint = Enum.SizeConstraint.RelativeXY
+		Description.TextDirection = Enum.TextDirection.LeftToRight
+		Description.TextTruncate = Enum.TextTruncate.AtEnd
+
+		UIAspectRatioConstraint.Parent = notifi
+		UIAspectRatioConstraint.AspectRatio = 2.895
+		local TS = game:GetService("TweenService")
+		TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(0.770558774, 0, notifistacks, 0)}):Play()
+		local sound = Instance.new("Sound", script.Parent)
+		sound.Name = "temp".. math.random(1, 1235123)
+		sound.Looped = false
+		sound.SoundId = "rbxassetid://120893938580291"
+		sound.Volume = .05
+		sound:Play()
+		task.wait(1)
+		sound:Destroy()
+		local timer = 0
+		while timer <= timeout do
+			task.wait(.2)
+			timer += .2
+		end
+		TS:Create(notifi, TweenInfo.new(.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out, 0, false), {Position = UDim2.new(1, 0, notifi.Position.Y.Scale, 0)}):Play() --0? idk why
+		task.wait(2)
+		game.Players.LocalPlayer.PlayerGui["v1ijv"].NotifyCount.Value -= 1
+		notifi:Destroy()
+	end)
+end
+
+
+
 
 
 -- StarterGui.v1ijv.alert
